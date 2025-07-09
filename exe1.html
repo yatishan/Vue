@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item,index) in fruit" :key="index">{{ index }} : {{ item}}</li>
+            <li v-for="(value,key,index) in user" :key="key">{{ index }} {{ key }} : {{ value }}</li>
+        </ul>
+        <h4>{{ num }}</h4>
+        <button @click="doAlert">Click</button>
+        <!-- <p v-show="num%2==0">this is even</p> -->
+        <p v-show="isEven">this is even</p>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const {createApp}=Vue;
+    createApp({
+        data(){
+            return {
+            fruit:['apple','orange','mango'], //looping
+            num:1,
+            user:{
+                name:'yati shan',
+                age:20,
+            }
+            }
+        },
+        methods:{          //event method
+            doAlert(){
+                alert("hello");
+                this.num++;
+            }
+        },
+        computed:{
+            isEven(){
+                return this.num%2==0;
+            }
+        }
+    }).mount('#app');
+</script>
+</html>

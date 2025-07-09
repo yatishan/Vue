@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <button @click.once="doAlert">hello</button> -->
+        <!-- <input type="text" v-on:keyup.enter="doAlert" name="" id="">  enter -->
+         <form action="" @submit.prevent="doAlert">
+            <input type="text" name="" id="">
+            <input type="submit" value="Submit">
+         </form>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const {createApp}=Vue;
+    createApp({
+        methods:{
+            doAlert(e){
+                console.log(e);
+            }
+        }
+    }).mount('#app')
+
+    
+</script>
+</html>

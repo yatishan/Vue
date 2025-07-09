@@ -1,0 +1,50 @@
+<style>
+    .color{
+        color:red;
+        margin-bottom: 50px;
+    }
+</style>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<!-- <div id="app">{{ message }}</div> -->
+
+<div id="app">
+    <p>{{ message }}</p>
+    <p>{{ language }}</p>
+    <p>{{ `language is ${language}`  }}</p>
+    <p>{{ isLike?"liked":"unliked"}}</p>
+</div>
+
+<div id="some">
+    <!-- <a v-bind:href="href" target="_blank" v-bind:class="{color:ok}">google</a> -->
+    <a :href="href" target="_blank" :class="{color:ok}">google</a>
+    <img :src="src" alt="" width="200px" :style="{display:dis}">
+</div>
+
+
+<script>
+
+  const {createApp}=Vue; //create vue
+
+  createApp({
+    data(){
+        return{
+            message:"hello",
+            language:"vue",
+            isLike:true,
+        }
+    }
+  }).mount('#app');
+
+  createApp({
+    data(){
+        return {
+            href:"https://google.com/",
+            ok:true,
+            src:"https://i.pinimg.com/736x/51/fa/0a/51fa0a437b9a657020dc65781c4f0789.jpg",
+            dis:"block"
+
+        }
+    }
+  }).mount('#some')
+</script>

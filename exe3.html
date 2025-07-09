@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V model</title>
+</head>
+<body>
+    <div id="app">
+        <input type="checkbox" value="A" v-model="char">
+        <input type="checkbox" value="B" v-model="char">
+        <input type="checkbox" value="C" v-model="char">
+        <p>{{ some }}</p>
+        <input type="text" name="" id="" v-model="some">
+        <pre>{{ char }}</pre>
+
+        <hr>
+
+        <input type="radio" value="Male" v-model="gender">
+        <input type="radio" value="Female" v-model="gender">
+        {{ gender }}
+
+        <hr>
+
+        <select v-model="grade">
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+        </select>
+        {{ grade }}
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const {createApp}=Vue;
+    createApp({
+        data(){
+            return {
+                char:[],
+                some:"yatishan",
+                gender:"Male",
+                grade:'A'
+            }
+        }
+    }).mount('#app')
+</script>
+</html>
