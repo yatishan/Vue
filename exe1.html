@@ -15,6 +15,12 @@
         <button @click="doAlert">Click</button>
         <!-- <p v-show="num%2==0">this is even</p> -->
         <p v-show="isEven">this is even</p>
+        <br>
+        <ul>
+            <li v-for="(student,index) in students" :key="index">
+                {{  student.name }}
+            </li>
+        </ul>
     </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
@@ -24,6 +30,11 @@
         data(){
             return {
             fruit:['apple','orange','mango'], //looping
+            students: [
+                {name: 'John', age: 18},
+                {name: 'Derek', age: 21},
+                {name: 'Htet Phone', age: 23},
+            ],
             num:1,
             user:{
                 name:'yati shan',
