@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <Post v-on:create-post="insertPost"></Post>
+        <!-- <my-button>
+            <template #title>
+                this is title
+            </template>
+            <template #content>
+                this is content
+            </template>
+        </my-button> -->
+        <my-button v-for="(post,index) in posts" :key="index" :title="post.title" :content="post.content" ></my-button>
+       
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="./vue.js"></script>
+</html>
